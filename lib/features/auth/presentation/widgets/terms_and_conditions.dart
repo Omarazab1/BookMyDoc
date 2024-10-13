@@ -2,8 +2,11 @@ import 'package:bookmydoc/core/theming/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class TermsAndConditionsText extends StatelessWidget {
-  const TermsAndConditionsText({super.key});
-
+  const TermsAndConditionsText({super.key, required this.text, required this.text2, required this.text3, required this.text4});
+ final String text ;
+ final String text2 ;
+ final String text3 ;
+ final String text4 ;
   @override
   Widget build(BuildContext context) {
     return RichText(
@@ -11,19 +14,19 @@ class TermsAndConditionsText extends StatelessWidget {
       text: TextSpan(
         children: [
           TextSpan(
-            text: 'By logging, you agree to our',
+            text:text ,
             style: AppStyles.textStyle12GreyParagraph,
           ),
           TextSpan(
-            text: ' Terms & Conditions',
+            text: text2,
             style: AppStyles.textStyle12DarkBlue,
           ),
           TextSpan(
-            text: ' and',
+            text:text3 ,
             style: AppStyles.textStyle12GreyParagraph.copyWith(height: 1.5),
           ),
           TextSpan(
-            text: ' Privacy Policy',
+            text: text4,
             style: AppStyles.textStyle12DarkBlue,
           ),
         ],

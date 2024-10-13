@@ -1,11 +1,12 @@
-import 'package:bookmydoc/core/helper/extensions.dart';
-import 'package:bookmydoc/core/routing/routes.dart';
+
 import 'package:bookmydoc/core/theming/app_styles.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 class NotHaveAccountText extends StatelessWidget {
-  const NotHaveAccountText({super.key});
-
+  const NotHaveAccountText({super.key, required this.text1, required this.text2, this.onTap});
+  final String text1;
+  final String text2;
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return RichText(
@@ -13,16 +14,14 @@ class NotHaveAccountText extends StatelessWidget {
       text: TextSpan(
         children: [
           TextSpan(
-            text: 'Don\'t have an account?',
+            text: text1,
             style: AppStyles.textStyle12DarkBlue,
           ),
           TextSpan(
-            text: ' Sign Up',
+            text: text2,
             style: AppStyles.textStyle12blue,
-            recognizer: TapGestureRecognizer()
-              ..onTap = () {
-                context.pushReplacementNamed(Routes.signUpScreen);
-              },
+            recognizer: TapGestureRecognizer()..onTap = onTap,
+
           ),
         ],
       ),

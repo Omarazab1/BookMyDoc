@@ -28,6 +28,8 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  retrofit: ^4.4.1
+  animate_do: ^3.3.4
   flutter_svg: ^2.0.10+1
   flutter_screenutil: ^5.9.3
   flutter:
@@ -39,6 +41,8 @@ dependencies:
   cupertino_icons: ^1.0.8
 
 dev_dependencies:
+  dio: ^5.7.0
+  build_runner: ^2.4.13
   flutter_test:
     sdk: flutter
 

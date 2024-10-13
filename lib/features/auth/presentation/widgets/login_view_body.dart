@@ -1,3 +1,4 @@
+import 'package:bookmydoc/core/helper/extensions.dart';
 import 'package:bookmydoc/core/helper/spacing.dart';
 import 'package:bookmydoc/core/theming/app_styles.dart';
 import 'package:bookmydoc/features/auth/presentation/widgets/custom_text_field.dart';
@@ -5,6 +6,8 @@ import 'package:bookmydoc/features/auth/presentation/widgets/not_have_account.da
 import 'package:bookmydoc/features/auth/presentation/widgets/terms_and_conditions.dart';
 import 'package:bookmydoc/features/on_boarding_screen/presentation/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../core/routing/routes.dart';
 
 
 class LoginViewBody extends StatefulWidget {
@@ -61,9 +64,21 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 verticalSpace(40),
                 const CustomButton(buttonText: 'Login'),
                 verticalSpace(28),
-                const TermsAndConditionsText(),
+                const TermsAndConditionsText(
+                  text: 'By logging, you agree to our',
+                  text2: ' Terms & Conditions',
+                  text3: ' and',
+                  text4: ' Privacy Policy',
+
+                ),
                 verticalSpace(24),
-                const NotHaveAccountText(),
+                 NotHaveAccountText(
+                  text1: 'Don\'t have an account?',
+                  text2: ' Sign Up',
+                  onTap: (){
+                    context.pushNamed(Routes.signUpScreen);
+                  },
+                ),
               ],
             )),
           ],

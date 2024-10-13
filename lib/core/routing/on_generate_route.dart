@@ -3,7 +3,7 @@ import 'package:bookmydoc/core/routing/routes.dart';
 import 'package:bookmydoc/features/auth/presentation/sign_up/sign_up_view.dart';
 import 'package:flutter/material.dart';
 
-import '../../features/auth/presentation/login_view.dart';
+import '../../features/auth/presentation/sign_in/login_view.dart';
 import '../../features/on_boarding_screen/presentation/on_boarding_screen_view.dart';
 import '../../features/splash/presentation/splash_view.dart';
 

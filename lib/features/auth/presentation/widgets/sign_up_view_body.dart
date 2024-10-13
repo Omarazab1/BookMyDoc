@@ -34,7 +34,8 @@ class _SignupViewBodyState extends State<SignupViewBody> {
             verticalSpace(20),
             Text('Create Account',style: AppStyles.textStyle24blue,),
             verticalSpace(15),
-            Text(' Sign up now and start exploring all that our app has to offer. We\'re excited to welcome you to our community!',style: AppStyles.textStyle12GreyParagraph,),
+            Text('Sign up now and start exploring all that our app has to offer.'
+                ' We\'re excited to welcome you to our community!',style: AppStyles.textStyle12GreyParagraph,),
             verticalSpace(36),
             Form(
                 key: formKey,

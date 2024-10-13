@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theming/app_styles.dart';
-import '../../../auth/presentation/login_view.dart';
+import '../../../auth/presentation/sign_in/login_view.dart';
 import 'custom_background_stack.dart';
 import 'custom_button.dart';
 import 'custom_logo.dart';

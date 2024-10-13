@@ -28,7 +28,7 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
 
   @override
   void dispose() {
-    // TODO: implement dispose
+   animationController.dispose();
     super.dispose();
   }
 

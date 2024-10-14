@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:bookmydoc/core/helper/extensions.dart';
 import 'package:bookmydoc/core/helper/spacing.dart';
 import 'package:bookmydoc/core/theming/app_styles.dart';
@@ -28,58 +29,61 @@ class _SignupViewBodyState extends State<SignupViewBody> {
     return  Padding(
       padding: const EdgeInsets.symmetric(horizontal: 18.0),
       child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            verticalSpace(20),
-            Text('Create Account',style: AppStyles.textStyle24blue,),
-            verticalSpace(15),
-            Text('Sign up now and start exploring all that our app has to offer.'
-                ' We\'re excited to welcome you to our community!',style: AppStyles.textStyle12GreyParagraph,),
-            verticalSpace(36),
-            Form(
-                key: formKey,
-                child:  Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    const CustomTextField(hintText: 'Email',),
-                    verticalSpace(18),
-                    CustomTextField(
-                      hintText: 'Password',
-                      isObscureText: isObscureText,
-                      suffixIcon: GestureDetector(
-                          onTap: (){
-                            setState(() {
-                              isObscureText = !isObscureText;
-                            });
-                          },
-                          child: Icon(
-                            isObscureText? Icons.visibility_off :
-                            Icons.visibility,
-                          )),
-                    ),
-                    verticalSpace(18),
-                    const CustomTextField(hintText: 'phone',),
+        child: FadeInUp(
+          delay: const Duration(milliseconds: 500),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              verticalSpace(20),
+              Text('Create Account',style: AppStyles.textStyle24blue,),
+              verticalSpace(15),
+              Text('Sign up now and start exploring all that our app has to offer.'
+                  ' We\'re excited to welcome you to our community!',style: AppStyles.textStyle12GreyParagraph,),
+              verticalSpace(36),
+              Form(
+                  key: formKey,
+                  child:  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const CustomTextField(hintText: 'Email',),
+                      verticalSpace(18),
+                      CustomTextField(
+                        hintText: 'Password',
+                        isObscureText: isObscureText,
+                        suffixIcon: GestureDetector(
+                            onTap: (){
+                              setState(() {
+                                isObscureText = !isObscureText;
+                              });
+                            },
+                            child: Icon(
+                              isObscureText? Icons.visibility_off :
+                              Icons.visibility,
+                            )),
+                      ),
+                      verticalSpace(18),
+                      const CustomTextField(hintText: 'phone',),
 
-                    verticalSpace(40),
-                    const CustomButton(buttonText: 'Sign Up',),
-                    verticalSpace(28),
-                    const TermsAndConditionsText(
-                      text: 'By signing up, you agree to our',
-                      text2: ' Terms & Conditions',
-                      text3: ' and',
-                      text4: ' Privacy Policy',
-                    ),
-                    verticalSpace(24),
-                     NotHaveAccountText(
-                      text1: 'Already have an account?',
-                      text2: ' Sign In' , onTap: (){
-                      context.pushReplacementNamed(Routes.loginScreen);
-                    },
-                    ),
-                  ],
-                )),
-          ],
+                      verticalSpace(40),
+                      const CustomButton(buttonText: 'Sign Up',),
+                      verticalSpace(28),
+                      const TermsAndConditionsText(
+                        text: 'By signing up, you agree to our',
+                        text2: ' Terms & Conditions',
+                        text3: ' and',
+                        text4: ' Privacy Policy',
+                      ),
+                      verticalSpace(24),
+                       NotHaveAccountText(
+                        text1: 'Already have an account?',
+                        text2: ' Sign In' , onTap: (){
+                        context.pushReplacementNamed(Routes.loginScreen);
+                      },
+                      ),
+                    ],
+                  )),
+            ],
+          ),
         ),
       ),
     );

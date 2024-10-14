@@ -1,8 +1,6 @@
 
-import 'package:bookmydoc/core/helper/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/routing/routes.dart';
 import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/app_styles.dart';
 
@@ -13,9 +11,7 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () {
-        context.pushNamed(Routes.loginScreen);
-      },
+      onPressed: onPressed,
       style: ButtonStyle(
         backgroundColor: WidgetStateProperty.all(AppColors.kPrimaryColor),
         shape: WidgetStateProperty.all<RoundedRectangleBorder>(

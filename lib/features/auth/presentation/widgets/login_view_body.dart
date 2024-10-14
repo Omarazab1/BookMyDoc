@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:bookmydoc/core/helper/extensions.dart';
 import 'package:bookmydoc/core/helper/spacing.dart';
 import 'package:bookmydoc/core/theming/app_styles.dart';
@@ -28,60 +29,63 @@ class _LoginViewBodyState extends State<LoginViewBody> {
     return  Padding(
       padding: const EdgeInsets.symmetric(horizontal: 18.0),
       child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            verticalSpace(20),
-            Text('Welcome Back',style: AppStyles.textStyle24blue,),
-            verticalSpace(15),
-            Text('We\'re excited to have you back, can\'t wait to see what you\'ve been up to since you last logged in.',style: AppStyles.textStyle12GreyParagraph,),
-            verticalSpace(36),
-            Form(
-                key: formKey,
-                child:  Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const CustomTextField(hintText: 'Email',),
-                verticalSpace(18),
-                CustomTextField(
-                    hintText: 'Password',
-                    isObscureText: isObscureText,
-                  suffixIcon: GestureDetector(
-                    onTap: (){
-                      setState(() {
-                        isObscureText = !isObscureText;
-                      });
-                    },
-                      child: Icon(
-                        isObscureText? Icons.visibility_off :
-                        Icons.visibility,
-                      )),
-                ),
-                verticalSpace(24),
-                Align(
-                  alignment: AlignmentDirectional.centerEnd,
-                    child: Text('Forgot Password?',style: AppStyles.textStyle12blue,)),
-                verticalSpace(40),
-                const CustomButton(buttonText: 'Login'),
-                verticalSpace(28),
-                const TermsAndConditionsText(
-                  text: 'By logging, you agree to our',
-                  text2: ' Terms & Conditions',
-                  text3: ' and',
-                  text4: ' Privacy Policy',
+        child: FadeInUp(
+          delay:  const Duration(milliseconds: 500),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              verticalSpace(20),
+              Text('Welcome Back',style: AppStyles.textStyle24blue,),
+              verticalSpace(15),
+              Text('We\'re excited to have you back, can\'t wait to see what you\'ve been up to since you last logged in.',style: AppStyles.textStyle12GreyParagraph,),
+              verticalSpace(36),
+              Form(
+                  key: formKey,
+                  child:  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const CustomTextField(hintText: 'Email',),
+                  verticalSpace(18),
+                  CustomTextField(
+                      hintText: 'Password',
+                      isObscureText: isObscureText,
+                    suffixIcon: GestureDetector(
+                      onTap: (){
+                        setState(() {
+                          isObscureText = !isObscureText;
+                        });
+                      },
+                        child: Icon(
+                          isObscureText? Icons.visibility_off :
+                          Icons.visibility,
+                        )),
+                  ),
+                  verticalSpace(24),
+                  Align(
+                    alignment: AlignmentDirectional.centerEnd,
+                      child: Text('Forgot Password?',style: AppStyles.textStyle12blue,)),
+                  verticalSpace(40),
+                  const CustomButton(buttonText: 'Login'),
+                  verticalSpace(28),
+                  const TermsAndConditionsText(
+                    text: 'By logging, you agree to our',
+                    text2: ' Terms & Conditions',
+                    text3: ' and',
+                    text4: ' Privacy Policy',
 
-                ),
-                verticalSpace(24),
-                 NotHaveAccountText(
-                  text1: 'Don\'t have an account?',
-                  text2: ' Sign Up',
-                  onTap: (){
-                    context.pushNamed(Routes.signUpScreen);
-                  },
-                ),
-              ],
-            )),
-          ],
+                  ),
+                  verticalSpace(24),
+                   NotHaveAccountText(
+                    text1: 'Don\'t have an account?',
+                    text2: ' Sign Up',
+                    onTap: (){
+                      context.pushNamed(Routes.signUpScreen);
+                    },
+                  ),
+                ],
+              )),
+            ],
+          ),
         ),
       ),
     );

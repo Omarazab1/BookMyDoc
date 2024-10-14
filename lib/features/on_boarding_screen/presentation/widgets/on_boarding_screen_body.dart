@@ -1,8 +1,9 @@
 
+import 'package:bookmydoc/core/helper/extensions.dart';
+import 'package:bookmydoc/core/routing/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theming/app_styles.dart';
-import '../../../auth/presentation/sign_in/login_view.dart';
 import 'custom_background_stack.dart';
 import 'custom_button.dart';
 import 'custom_logo.dart';
@@ -34,7 +35,7 @@ class OnBoardingScreenBody extends StatelessWidget {
                     ),
                     const SizedBox(height: 20,),
                     CustomButton(buttonText: 'Get Started',onPressed: (){
-                     Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginView()));
+                         context.pushReplacementNamed(Routes.loginScreen);
                     },),
                   ],
                 ),

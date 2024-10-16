@@ -1,4 +1,5 @@
 
+import 'package:bookmydoc/core/di/dependency_injection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -6,6 +7,7 @@ import 'core/routing/on_generate_route.dart';
 import 'core/routing/routes.dart';
 import 'core/theming/app_colors.dart';
 void main() {
+  setUpGetIt();
   runApp(BookMyDoc(
     onGenerateRoute: OnGenerateRoute(),
   ));

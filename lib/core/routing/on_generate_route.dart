@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../features/auth/logic/cubits/login/login_cubit.dart';
 import '../../features/auth/presentation/sign_in/login_view.dart';
+import '../../features/home/presentation/views/home_view.dart';
 import '../../features/on_boarding_screen/presentation/on_boarding_screen_view.dart';
 import '../../features/splash/presentation/splash_view.dart';
 
@@ -22,6 +23,8 @@ class OnGenerateRoute {
           child: const LoginView()));
       case Routes.signUpScreen:
         return MaterialPageRoute(builder: (context) => const SignUpView());
+      case Routes.homeView:
+        return MaterialPageRoute(builder: (context) => const HomeView());
       default:
       return MaterialPageRoute(builder: (context) => Scaffold(
         body: Center(

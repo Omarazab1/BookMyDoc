@@ -2,7 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:bookmydoc/core/helper/extensions.dart';
 import 'package:bookmydoc/core/helper/spacing.dart';
 import 'package:bookmydoc/core/theming/app_styles.dart';
-import 'package:bookmydoc/features/auth/presentation/widgets/custom_text_field.dart';
+import 'package:bookmydoc/features/auth/presentation/widgets/email_and_password.dart';
 import 'package:bookmydoc/features/auth/presentation/widgets/not_have_account.dart';
 import 'package:bookmydoc/features/auth/presentation/widgets/terms_and_conditions.dart';
 import 'package:bookmydoc/features/on_boarding_screen/presentation/widgets/custom_button.dart';
@@ -45,25 +45,9 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                   child:  Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      const CustomTextField(hintText: 'Email',),
+                      const EmailAndPassword(),
                       verticalSpace(18),
-                      CustomTextField(
-                        hintText: 'Password',
-                        isObscureText: isObscureText,
-                        suffixIcon: GestureDetector(
-                            onTap: (){
-                              setState(() {
-                                isObscureText = !isObscureText;
-                              });
-                            },
-                            child: Icon(
-                              isObscureText? Icons.visibility_off :
-                              Icons.visibility,
-                            )),
-                      ),
-                      verticalSpace(18),
-                      const CustomTextField(hintText: 'phone',),
-
+                      //const CustomTextField(hintText: 'phone',),
                       verticalSpace(40),
                       const CustomButton(buttonText: 'Sign Up',),
                       verticalSpace(28),

@@ -1,9 +1,9 @@
 
-import 'package:bookmydoc/features/auth/data/repos/login_repo.dart';
+import 'package:bookmydoc/features/auth/data/repos/login/login_repo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../data/models/login_request_body.dart';
+import '../../../data/models/login/login_request_body.dart';
 import 'login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
@@ -13,9 +13,14 @@ class LoginCubit extends Cubit<LoginState> {
   TextEditingController passwordController = TextEditingController();
   final formKey = GlobalKey<FormState>();
 
-    void emitLoginStates(LoginRequestBody loginRequestBody) async {
+    void emitLoginStates() async {
       emit(const LoginState.loading());
-      final result = await _loginRepo.login(loginRequestBody: loginRequestBody);
+      final result = await _loginRepo.login(
+        loginRequestBody: LoginRequestBody(
+          email: emailController.text,
+          password: passwordController.text,
+        ),
+      );
       result.when(
           success: (loginResponse){
             emit(LoginState.success(loginResponse));

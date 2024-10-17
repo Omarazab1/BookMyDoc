@@ -1,5 +1,6 @@
 
 import 'package:bookmydoc/core/di/dependency_injection.dart';
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -8,8 +9,11 @@ import 'core/routing/routes.dart';
 import 'core/theming/app_colors.dart';
 void main() {
   setUpGetIt();
-  runApp(BookMyDoc(
-    onGenerateRoute: OnGenerateRoute(),
+  runApp(DevicePreview(
+    enabled: true,
+    builder: (context) => BookMyDoc(
+      onGenerateRoute: OnGenerateRoute(),
+    ),
   ));
 
 }

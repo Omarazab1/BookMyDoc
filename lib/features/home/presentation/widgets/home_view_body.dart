@@ -4,6 +4,7 @@ import 'package:bookmydoc/features/home/presentation/widgets/speciality_list_vie
 import 'package:flutter/material.dart';
 
 import 'doctor_blue_card.dart';
+import 'doctors_list_view.dart';
 import 'home_top_bar.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -30,6 +31,7 @@ class HomeViewBody extends StatelessWidget {
             verticalSpace(24),
             const ListTitlesRow(text1: 'Recommended Doctors'),
             verticalSpace(12),
+            const DoctorsListView(),
           ],
         ),
       ),

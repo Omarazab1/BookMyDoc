@@ -13,6 +13,7 @@ class ListTitlesRow extends StatelessWidget {
         style: AppStyles.textStyle15BlackSemiBold,),
          Text('See All',
         style: AppStyles.textStyle12blue,),
+
       ],
     );
   }

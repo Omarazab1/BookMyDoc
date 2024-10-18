@@ -1,5 +1,7 @@
+import 'package:bookmydoc/core/helper/spacing.dart';
 import 'package:flutter/material.dart';
 
+import 'doctor_blue_card.dart';
 import 'home_top_bar.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -11,10 +13,12 @@ class HomeViewBody extends StatelessWidget {
       child: Container(
         width: double.infinity,
         margin: const EdgeInsets.fromLTRB(20, 16, 20, 28),
-        child: const Column(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            HomeTopBar(),
+            const HomeTopBar(),
+            verticalSpace(10),
+            const DoctorBlueCard(),
           ],
         ),
       ),

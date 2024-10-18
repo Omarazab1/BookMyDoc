@@ -57,4 +57,9 @@ class AppStyles {
     color: AppColors.kDarkBlueColor,
   );
 
+  static TextStyle textStyle13White= TextStyle(
+     fontSize: 13.sp,
+     fontWeight: FontWeightHelper.medium,
+     color: Colors.white,
+  );
 }

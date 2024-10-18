@@ -51,5 +51,10 @@ class AppStyles {
     fontWeight: FontWeightHelper.regular,
     color: AppColors.kDarkBlueColor,
   );
+  static TextStyle nameStyle18= TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: AppColors.kDarkBlueColor,
+  );
 
 }

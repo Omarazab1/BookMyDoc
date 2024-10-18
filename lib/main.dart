@@ -32,7 +32,7 @@ class BookMyDoc extends StatelessWidget {
           primaryColor: AppColors.kPrimaryColor,
           scaffoldBackgroundColor: Colors.white,
         ),
-        initialRoute: Routes.splashView,
+        initialRoute: Routes.homeView,
         debugShowCheckedModeBanner: false,
         onGenerateRoute: OnGenerateRoute().onGenerateRoute,
       ),

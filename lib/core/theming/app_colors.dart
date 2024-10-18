@@ -9,4 +9,5 @@ class AppColors {
   static const kDarkBlueColor = Color(0xFF242424);
   static const kGreyForm = Color(0xFFFDFDFF);
   static const kMoreLighterGrey = Color(0xFFF5F5F5);
+  static const kLightBlue = Color(0xFFF4F8FF);
 }

@@ -62,4 +62,9 @@ class AppStyles {
      fontWeight: FontWeightHelper.medium,
      color: Colors.white,
   );
+  static TextStyle textStyle15BlackSemiBold= TextStyle(
+    fontSize: 15.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: Colors.black,
+  );
 }

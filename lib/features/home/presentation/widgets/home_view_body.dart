@@ -1,4 +1,6 @@
 import 'package:bookmydoc/core/helper/spacing.dart';
+import 'package:bookmydoc/features/home/presentation/widgets/doctors_speciality_row.dart';
+import 'package:bookmydoc/features/home/presentation/widgets/speciality_list_view.dart';
 import 'package:flutter/material.dart';
 
 import 'doctor_blue_card.dart';
@@ -19,6 +21,15 @@ class HomeViewBody extends StatelessWidget {
             const HomeTopBar(),
             verticalSpace(10),
             const DoctorBlueCard(),
+            verticalSpace(24),
+            const ListTitlesRow(
+              text1: 'Doctors Speciality',
+            ),
+            verticalSpace(12),
+            const SpecialityListView(),
+            verticalSpace(24),
+            const ListTitlesRow(text1: 'Recommended Doctors'),
+            verticalSpace(12),
           ],
         ),
       ),

@@ -1,6 +1,7 @@
 import 'package:bookmydoc/core/di/dependency_injection.dart';
 import 'package:bookmydoc/core/routing/routes.dart';
 import 'package:bookmydoc/features/auth/presentation/sign_up/sign_up_view.dart';
+import 'package:bookmydoc/features/home/logic/cubits/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../features/auth/logic/cubits/login/login_cubit.dart';
@@ -25,7 +26,9 @@ class OnGenerateRoute {
             create: (context) => getIt<RegisterCubit>(),
             child: const SignUpView()));
       case Routes.homeView:
-        return MaterialPageRoute(builder: (context) => const HomeView());
+        return MaterialPageRoute(builder: (context) => BlocProvider(
+            create: (context) => HomeCubit(getIt())..getSpecializationsData(),
+            child: const HomeView()));
       default:
       return MaterialPageRoute(builder: (context) => Scaffold(
         body: Center(

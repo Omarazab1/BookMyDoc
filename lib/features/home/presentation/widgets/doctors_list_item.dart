@@ -1,3 +1,4 @@
+import 'package:bookmydoc/features/home/data/models/specializations_response_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -5,8 +6,9 @@ import '../../../../core/helper/spacing.dart';
 import '../../../../core/theming/app_styles.dart';
 
 class DoctorsListViewItem extends StatelessWidget {
+  final Doctors? doctorsModel;
   const DoctorsListViewItem({
-    super.key,
+    super.key, this.doctorsModel,
   });
 
   @override
@@ -21,7 +23,7 @@ class DoctorsListViewItem extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(12.r),
             child: Image.asset('assets/images/docList.png',
-              width: 90.w,
+              width: 110.w,
               height: 120.h,
               fit:  BoxFit.cover,),
 
@@ -31,13 +33,13 @@ class DoctorsListViewItem extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Dr. Name',
+                  Text(doctorsModel?.name ?? 'Name',
                     style: AppStyles.textStyle15BlackSemiBold,),
                   verticalSpace(5),
-                  Text('General',
+                  Text('${doctorsModel?.degree} | ${doctorsModel?.phone}',
                     style: AppStyles.textStyle12GreyParagraph,),
                   verticalSpace(5),
-                  Text('Rating',
+                  Text(doctorsModel?.email ?? 'Email',
                     style: AppStyles.textStyle12GreyParagraph,),
                 ],
               )),

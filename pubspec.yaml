@@ -40,6 +40,8 @@ dependencies:
   flutter_bloc: ^8.1.6
   device_preview: ^1.2.0
   cached_network_image: ^3.4.1
+  shared_preferences: ^2.3.2
+  flutter_secure_storage: ^9.2.2
   get_it: ^8.0.0
   json_serializable: ^6.8.0
   json_annotation: ^4.9.0

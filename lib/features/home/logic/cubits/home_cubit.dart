@@ -12,7 +12,7 @@ class HomeCubit extends Cubit<HomeState> {
     final result = await _homeRepo.getSpecializationsData();
     result.when(
       success: (specializationsResponseModel) {
-        emit( HomeState.homeSuccess(specializationsResponseModel));
+        emit(HomeState.homeSuccess(specializationsResponseModel));
       },
       failure:(errorHandler) {
         emit(HomeState.homeError(errorHandler));

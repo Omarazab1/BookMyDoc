@@ -16,7 +16,8 @@ class DoctorsListViewItem extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(bottom: 16.h),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16.r),
+        //shape: BoxShape.rectangle,
+        borderRadius: BorderRadius.circular(12.r),
       ),
       child: Row(
         children: [
@@ -34,12 +35,18 @@ class DoctorsListViewItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(doctorsModel?.name ?? 'Name',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: AppStyles.textStyle15BlackSemiBold,),
                   verticalSpace(5),
                   Text('${doctorsModel?.degree} | ${doctorsModel?.phone}',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: AppStyles.textStyle12GreyParagraph,),
                   verticalSpace(5),
                   Text(doctorsModel?.email ?? 'Email',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: AppStyles.textStyle12GreyParagraph,),
                 ],
               )),

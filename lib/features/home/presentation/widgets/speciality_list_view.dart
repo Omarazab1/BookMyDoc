@@ -23,8 +23,7 @@ class SpecialityListView extends StatelessWidget {
              itemIndex: index ,
              specializationsData: specializationDataList[index],
            );
-         }
-              ),
+         }),
     );
   }
 }

@@ -11,7 +11,7 @@ class DoctorsListView extends StatelessWidget {
     return Expanded(
       child: ListView.builder(
         itemCount: doctorsList?.length,
-        itemBuilder: ( context, index) {
+        itemBuilder: (context, index) {
           return  DoctorsListViewItem(
             doctorsModel: doctorsList?[index],
           );

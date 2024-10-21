@@ -8,9 +8,10 @@ import '../../../../core/theming/app_colors.dart';
 class SpecialityListViewItem extends StatelessWidget {
   final SpecializationsData? specializationsData;
   final int itemIndex;
+  final int selectedIndex;
 
   const SpecialityListViewItem({
-    super.key, this.specializationsData, required this.itemIndex,
+    super.key, this.specializationsData, required this.itemIndex, required this.selectedIndex,
   });
 
   @override
@@ -21,6 +22,22 @@ class SpecialityListViewItem extends StatelessWidget {
       ),
       child: Column(
         children: [
+          itemIndex == selectedIndex ?
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: const Color(0xff384B70),
+                  ),
+                  shape: BoxShape.circle,
+                ),
+                child: CircleAvatar(
+                  radius: 28,
+                  backgroundColor: AppColors.kLightBlue,
+                  child: Image.asset('assets/images/manDoctor.png',
+                    height: 42.h,
+                    width: 42.w,),
+                ),
+              ):
           CircleAvatar(
             radius: 28,
             backgroundColor: AppColors.kLightBlue,
@@ -29,7 +46,11 @@ class SpecialityListViewItem extends StatelessWidget {
               width: 40.w,),
           ),
           verticalSpace(8),
-           Text(specializationsData?.name ?? 'specialization', style: const TextStyle(fontSize: 14),),
+           Text(
+             specializationsData?.name ?? 'specialization',
+             style: itemIndex == selectedIndex ?
+             const TextStyle(fontSize: 15, color: Color(0xff384B70)):
+             const TextStyle(fontSize: 14),),
         ],
       ),
     );

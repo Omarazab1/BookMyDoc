@@ -1,8 +1,9 @@
 import 'package:bookmydoc/core/helper/spacing.dart';
 import 'package:bookmydoc/features/home/presentation/widgets/doctors_speciality_row.dart';
-import 'package:bookmydoc/features/home/presentation/widgets/specializations_and_doctors_bloc_builder.dart';
+import 'package:bookmydoc/features/home/presentation/widgets/specializations_bloc_builder.dart';
 import 'package:flutter/material.dart';
 import 'doctor_blue_card.dart';
+import 'doctors_bloc_builder.dart';
 import 'home_top_bar.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -25,7 +26,9 @@ class HomeViewBody extends StatelessWidget {
               text1: 'Doctors Speciality',
             ),
             verticalSpace(12),
-            setupSpecializationsAndDoctorsBlocBuilder(),
+            const SpecializationsBlocBuilder(),
+            verticalSpace(8),
+            const DoctorsBlocBuilder(),
 
           ],
         ),

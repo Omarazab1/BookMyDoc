@@ -5,8 +5,14 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'home_state.freezed.dart';
 @freezed
 class HomeState<T> with _$HomeState<T> {
-   const factory HomeState.homeInitial() = _HomeInitial;
-   const factory HomeState.homeLoading() = HomeLoading;
-   const factory HomeState.homeSuccess(SpecializationsResponseModel specializationsResponseModel) = HomeSuccess;
-   const factory HomeState.homeError(ErrorHandler errorHandler) = HomeError;
+   //specializations states
+   const factory HomeState.specializationsInitial() = _SpecializationsInitial;
+   const factory HomeState.specializationsLoading() = SpecializationsLoading;
+   const factory HomeState.specializationsSuccess(List<SpecializationsData?>? specializationDataList) = SpecializationsSuccess;
+   const factory HomeState.specializationsError(ErrorHandler errorHandler) = SpecializationsError;
+
+
+   //doctors states
+   const factory HomeState.doctorsSuccess(List<Doctors?>? doctorDataList) = DoctorsSuccess;
+   const factory HomeState.doctorsError(ErrorHandler errorHandler) = DoctorsError;
 }

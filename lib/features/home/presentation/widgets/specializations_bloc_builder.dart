@@ -1,8 +1,11 @@
 import 'package:bookmydoc/features/home/presentation/widgets/speciality_list_view.dart';
+import 'package:bookmydoc/features/home/presentation/widgets/speciality_shimmer_loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../core/helper/spacing.dart';
 import '../../logic/cubits/home_cubit.dart';
 import '../../logic/cubits/home_state.dart';
+import 'doctors_shimmer_loading.dart';
 class SpecializationsBlocBuilder extends StatelessWidget {
   const SpecializationsBlocBuilder({super.key});
 
@@ -32,13 +35,12 @@ class SpecializationsBlocBuilder extends StatelessWidget {
 
   /// shimmer loading for specializations and doctors
   Widget setupLoading() {
-    return const Expanded(
+    return  Expanded(
       child: Column(
         children: [
-          CircularProgressIndicator(),
-          // const SpecialityShimmerLoading(),
-          // verticalSpace(8),
-          // const DoctorsShimmerLoading(),
+          const SpecialityShimmerLoading(),
+          verticalSpace(8),
+          const DoctorsShimmerLoading(),
         ],
       ),
     );
